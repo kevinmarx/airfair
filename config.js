@@ -11,7 +11,7 @@ conf.server = {
 }
 
 conf.templating = {
-  templatePath: __dirname + '/app/templates'
+  templatePath: __dirname + '/app/views'
 }
 
 conf.cookies = {}
@@ -30,9 +30,7 @@ conf.errorPage = {
   debug: true
 }
 
-conf.timeout = 20
-
-conf.colorScheme = ['blue', 'green', 'orange', 'yellow', 'purple', 'pink']
+conf.timeout = 2
 
 // Try to load environment configuration
 var envconf
