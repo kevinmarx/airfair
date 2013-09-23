@@ -38,6 +38,12 @@ module.exports = function(grunt) {
         }
       },
       all: ['Gruntfile.js', 'app/assets/js/!(lib|plugins|templates|tmpl|ui)/**/*.js', 'test-client/spec/**/*.js', 'app/templates/helpers/**/!(debugger).js']
+    },
+    exec: {
+      setup: {
+        command: 'sqlite3 airfair.db',
+        stdout: true
+      }
     }
   });
 
@@ -45,8 +51,10 @@ module.exports = function(grunt) {
   // put require before handlebars because require wipes the dir
   grunt.registerTask('default', ['jshint'])
   grunt.registerTask('test',    ['jshint', 'mocha'])
+  grunt.registerTask('setup',   ['exec:setup'])
 
   // load the grunt task plugins
   grunt.loadNpmTasks('grunt-contrib-jshint')
   grunt.loadNpmTasks('grunt-mocha')
+  grunt.loadNpmTasks('grunt-exec')
 };

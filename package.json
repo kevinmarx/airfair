@@ -4,17 +4,18 @@
   "description": "A tool for getting a fair fare.",
   "main": "./server.js",
   "dependencies": {
-    "async"                   : "0.2.x",
-    "underscore"              : "*",
-    "glob"                    : "3.1.x",
-    "grunt"                   : "0.4.1",
-    "filed"                   : "0.0.x",
-    "grunt-contrib-jshint"    : "0.1.x",
-    "grunt-mocha"             : "0.4.x",
-    "nokomis"                 : "latest",
-    "nokomis-plugins"         : "latest",
-    "request"                 : "2.21.0",
-    "node-phantom"            : "0.2.x"
+    "async": "0.2.x",
+    "underscore": "*",
+    "glob": "3.1.x",
+    "grunt": "0.4.1",
+    "filed": "0.0.x",
+    "grunt-contrib-jshint": "0.1.x",
+    "grunt-mocha": "0.4.x",
+    "nokomis": "latest",
+    "nokomis-plugins": "latest",
+    "request": "2.21.0",
+    "node-phantom": "0.2.x",
+    "dblite": "~0.3.3"
   },
   "devDependencies": {
     "mocha": "*",
@@ -29,8 +30,8 @@
     "url": "git://github.com/kevinmarx/airfair"
   },
   "scripts": {
-    "start" : "node server.js | node_modules/nokomis/node_modules/bunyan/bin/bunyan",
-    "watch" : "nodemon --watch ./ server.js | node_modules/nokomis/node_modules/bunyan/bin/bunyan",
+    "start": "node server.js | node_modules/nokomis/node_modules/bunyan/bin/bunyan",
+    "watch": "nodemon --watch ./ server.js | node_modules/nokomis/node_modules/bunyan/bin/bunyan",
     "test": "mocha --recursive -R spec",
     "coverage": "mocha --recursive --require blanket -R html-cov > coverage.html && open ./coverage.html",
     "blanket": {
