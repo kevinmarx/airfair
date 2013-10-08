@@ -10,11 +10,7 @@ var config = require('../../config')
 var BaseController = module.exports = Controller.extend({
 
   initialize: function(options) {
-    if (this.currentUser) {
-      this.currentUser.thirdNorth =
-        this.currentUser.isThirdNorth() ||
-        (config.ngin.whitelistedUsers && !!~config.ngin.whitelistedUsers.indexOf(this.currentUser.id))
-    }
+
   },
 
   serialize: function(callback) {
@@ -23,11 +19,14 @@ var BaseController = module.exports = Controller.extend({
   },
 
   jsonify: function(callback) {
-    if (this.model != null && typeof this.model == 'object') {
-      var key = Object.keys(this.model)[0]
-      this.model = key ? this.model[key] : this.model
-    }
+    this.model.toJSON()
     callback()
+  },
+
+  prepareModel: function(data) {
+    _.each(data, function(value, key) {
+      this.model.set(key, value)
+    })
   }
 
 })

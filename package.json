@@ -6,6 +6,7 @@
   "dependencies": {
     "async": "0.2.x",
     "underscore": "*",
+    "backbone": "*",
     "glob": "3.1.x",
     "grunt": "0.4.1",
     "filed": "0.0.x",
