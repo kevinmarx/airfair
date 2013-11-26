@@ -1,42 +1,21 @@
 {
-  "name": "airfair",
-  "version": "0.0.1",
-  "description": "A tool for getting a fair fare.",
-  "main": "./server.js",
-  "dependencies": {
-    "async": "0.2.x",
-    "underscore": "*",
-    "backbone": "*",
-    "glob": "3.1.x",
-    "grunt": "0.4.1",
-    "filed": "0.0.x",
-    "grunt-contrib-jshint": "0.1.x",
-    "grunt-mocha": "0.4.x",
-    "nokomis": "latest",
-    "nokomis-plugins": "latest",
-    "request": "2.21.0",
-    "node-phantom": "0.2.x",
-    "dblite": "~0.3.3"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "sinon": "*",
-    "blanket": "*"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/kevinmarx/airfair"
-  },
-  "scripts": {
-    "start": "node server.js | node_modules/nokomis/node_modules/bunyan/bin/bunyan",
-    "watch": "nodemon --watch ./ server.js | node_modules/nokomis/node_modules/bunyan/bin/bunyan",
-    "test": "mocha --recursive -R spec",
-    "coverage": "mocha --recursive --require blanket -R html-cov > coverage.html && open ./coverage.html",
-    "blanket": {
-      "pattern": "src"
-    }
-  }
+    "name": "airfair",
+    "private": true,
+    "version": "0.0.0",
+    "description": "a Sails application",
+    "dependencies": {
+        "sails": "0.9.7",
+        "grunt": "0.4.1",
+        "sails-disk": "~0.9.0",
+        "ejs": "0.8.4",
+        "optimist": "0.3.4"
+    },
+    "scripts": {
+        "start": "node app.js",
+        "debug": "node debug app.js"
+    },
+    "main": "app.js",
+    "repository": "",
+    "author": "",
+    "license": ""
 }
